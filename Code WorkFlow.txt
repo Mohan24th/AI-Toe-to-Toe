@@ -1,0 +1,93 @@
+**Tic-Tac-Toe with Minimax Algorithm - Workflow and Function Overview**
+
+---
+
+### Overview:
+
+This document outlines the key functions and the workflow used in building a Tic-Tac-Toe game using the Minimax algorithm. It is intended as a reference for future understanding and improvement.
+
+---
+
+### 1. Game Components:
+
+* **Board Representation:**
+  A 3x3 list (or matrix) to represent the game state.
+
+  ```python
+  board = [["", "", ""],
+           ["", "", ""],
+           ["", "", ""]]
+  ```
+
+* **Players:**
+
+  * Human: usually 'X'
+  * AI: usually 'O'
+
+---
+
+### 2. Key Functions:
+
+#### a. `print_board(board)`
+
+* Displays the current state of the board.
+
+#### b. `is_winner(board, player)`
+
+* Checks all rows, columns, and diagonals to determine if the player has won.
+
+#### c. `is_full(board)`
+
+* Returns True if all spots are filled (draw condition).
+
+#### d. `get_available_moves(board)`
+
+* Returns a list of empty (i, j) positions.
+
+#### e. `minimax(board, depth, is_maximizing)`
+
+* Core of the AI:
+
+  * Simulates all possible moves.
+  * Scores:
+
+    * +1 if AI wins
+    * -1 if Human wins
+    * 0 for draw
+  * Recursively evaluates all game states.
+
+#### f. `best_move(board)`
+
+* Wrapper for Minimax to find the best move for the AI.
+
+#### g. `make_move(board, row, col, player)`
+
+* Places a move on the board for the player if the spot is empty.
+
+---
+
+### 3. Game Loop Workflow:
+
+1. Initialize empty board.
+2. Repeat until game over:
+
+   * Human makes a move.
+   * Check for winner or draw.
+   * AI computes best move using `minimax`.
+   * AI places move.
+   * Check for winner or draw.
+3. Announce result.
+
+---
+
+
+
+---
+
+### 4. Summary:
+
+The Minimax algorithm ensures the AI never loses. Understanding this basic flow helps in implementing other turn-based games and optimization problems.
+
+---
+
+**End of Document**
